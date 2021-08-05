@@ -25,3 +25,15 @@ else:
     for i in range(3, n):
         a.append((a[i-1] + a[i-2] + a[i-3]) % 10007)
     print(a[-1] % 10007)
+
+#別解
+a, b, c = 0, 0, 1
+n = int(input())
+if n > 3:
+    for i in range(3, n):
+        a, b, c = b, c, (a+b+c) % 10007
+    print(c % 10007)
+elif n <= 2:
+    print(0)
+else:
+    print(1)
